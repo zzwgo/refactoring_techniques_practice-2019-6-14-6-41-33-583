@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -25,7 +27,13 @@ public class OwingPrinterTest {
 
     @Test
     public void printOwing() {
-//        System.out.print("hello");
-//        assertEquals("hello", outContent.toString());
+        String expect="*****************************\r\n****** Customer totals ******\r\n*****************************\r\nname: Cat\r\namount: 66.0\r\n";
+        List<Order> orders=new ArrayList<>();
+        orders.add(new Order(66));
+        OwingPrinter owingPrinter=new OwingPrinter();
+        owingPrinter.printOwing("Cat",orders);
+        assertEquals(expect, outContent.toString());
     }
+
+
 }
