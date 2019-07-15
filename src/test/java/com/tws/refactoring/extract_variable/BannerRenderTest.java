@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class PriceCalculatorTest {
+public class BannerRenderTest {
 
     @Test
     public void should_return_banner_when_input_abc_and_edf(){
